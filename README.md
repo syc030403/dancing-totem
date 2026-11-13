@@ -36,6 +36,8 @@ brew services start dancing-totem
 open "build/Dancing Totem.app"
 ```
 
+## 처음 실행
+
 처음 실행하면 메뉴바에 "GIF 선택"이라는 글자가 나타납니다. 눌러서 **GIF 선택…** 을 고르고 재생할 GIF 파일을 지정하세요. 고른 파일은 `~/Library/Application Support/Dancing Totem/animation.gif` 로 복사됩니다.
 
 빌드 전에 `Resources/dancer.gif` 를 넣어 두면 그 GIF가 앱에 기본으로 포함됩니다.
