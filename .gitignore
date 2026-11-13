@@ -1,0 +1,4 @@
+build/
+.DS_Store
+# 기본 GIF는 저장소에 넣지 않는다 (각자 원하는 GIF를 쓴다)
+Resources/*.gif
