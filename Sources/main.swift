@@ -163,7 +163,19 @@ final class CPUMonitor {
 // MARK: - 앱
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
-    private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    private let statusItem: NSStatusItem = {
+        // 새 항목은 메뉴바 맨 왼쪽에 붙는데, 메뉴바가 꽉 찬 노치 맥북에서는 그 자리가 노치 뒤라 안 보인다.
+        // 저장된 위치가 없을 때만 오른쪽 가까운 자리를 기본값으로 준다(오른쪽 끝에서의 거리, pt).
+        // 사용자가 Cmd+드래그로 옮기면 그 위치가 저장되어 이 기본값은 다시 쓰이지 않는다.
+        let name = "dancing-totem"
+        let positionKey = "NSStatusItem Preferred Position \(name)"
+        if UserDefaults.standard.object(forKey: positionKey) == nil {
+            UserDefaults.standard.set(280, forKey: positionKey)
+        }
+        let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        item.autosaveName = name
+        return item
+    }()
     private let monitor = CPUMonitor()
     private var animation: Animation?
     /// 버튼 이미지를 매번 갈아 끼우면 메뉴바 전체가 다시 그려져 무겁다.
