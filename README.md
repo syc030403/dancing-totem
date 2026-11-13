@@ -42,6 +42,12 @@ open "build/Dancing Totem.app"
 
 빌드 전에 `Resources/dancer.gif` 를 넣어 두면 그 GIF가 앱에 기본으로 포함됩니다.
 
+## 알아둘 점
+
+- Homebrew로 설치한 앱은 응용 프로그램 폴더나 Launchpad에 나타나지 않습니다. 터미널에서 `dancing-totem` 으로 실행하거나, `brew services start dancing-totem` 으로 로그인 시 자동 실행을 켜 두세요.
+- 기본 그림은 들어 있지 않습니다. 메뉴바에 맞는 작은 GIF를 미리 준비해 두세요. 배경이 투명한 픽셀 아트가 잘 어울립니다.
+- 메뉴바에 아이콘이 많으면 노치 뒤에 가려질 수 있습니다. 안 보이면 다른 아이콘을 Cmd를 누른 채 메뉴바 밖으로 끌어내 자리를 비워 주세요.
+
 ## 메뉴
 
 | 항목 | 설명 |
