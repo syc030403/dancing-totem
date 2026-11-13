@@ -8,10 +8,28 @@
 
 ## 요구 사항
 
-- macOS 13 이상, Apple Silicon
+- macOS 13 이상
 - Xcode Command Line Tools (`xcode-select --install`)
 
-## 빌드와 실행
+## Homebrew로 설치
+
+```bash
+brew install syc030403/tap/dancing-totem
+```
+
+설치하는 맥에서 직접 컴파일합니다. 실행은 아래 명령으로 합니다.
+
+```bash
+dancing-totem
+```
+
+로그인할 때 자동으로 켜지게 하려면 아래 명령을 한 번 실행합니다.
+
+```bash
+brew services start dancing-totem
+```
+
+## 직접 빌드
 
 ```bash
 ./build.sh
@@ -31,7 +49,7 @@ open "build/Dancing Totem.app"
 | 메뉴바에 CPU % 표시 | 그림 옆에 수치 표시 |
 | 로그인 시 자동 실행 | 맥을 켤 때 자동으로 시작 |
 
-자동 실행은 앱을 응용 프로그램 폴더로 옮긴 뒤에 켜세요.
+메뉴의 자동 실행은 직접 빌드한 앱을 응용 프로그램 폴더로 옮긴 뒤에 켜세요. Homebrew로 설치했다면 `brew services` 를 쓰세요.
 
 ## GIF 고르는 요령
 
